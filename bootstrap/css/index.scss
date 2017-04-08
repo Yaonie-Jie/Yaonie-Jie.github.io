@@ -1,0 +1,199 @@
+@import './_base';
+@import './_col';
+
+/*头部*/
+.header{
+    @include rect(100%,262px);
+    padding-top:138px;
+    position: relative;
+    @include bgimg('../images/header-bg.jpg');
+    @extend %bgi;
+    background-size: cover;
+    a,p{
+        display: block;
+        @include rect(305px,70px);
+        @extend %lr;
+        font-weight: 700;
+        color: $white;
+        font-size: 64px;
+        text-align: center;
+        line-height: 70px;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    p{
+        font-weight: 100;
+        font-size: 34px;
+        bottom:100px;
+    }
+    img{
+        @extend %lr;
+        width:78px;
+        bottom: -33px;
+    }
+}
+/*内容*/
+.main{
+    margin: 90px auto 0 auto;
+    position: relative;
+    .main-bottom{
+        margin-top: -15px;
+        line-height: 80px;
+        text-align: center;
+        color: $color;
+        font-size: 13px;
+    }
+    .main-next{
+        position: absolute;
+        right: 20px;
+        display: block;
+        padding: 10px;
+        line-height: 18px;
+        border-radius: 3px;
+        font-size: 13px;
+        border: 1px solid $color;
+        bottom:20px;
+        &:hover{
+            border-color: #666;
+            color: $white;
+            background: #4a4849;
+        }
+    }
+}
+.box{
+    width: 100%;
+}
+@media (min-width:768px){
+    .box{
+        width:750px;
+    }
+}
+@media (min-width:992px){
+    .box{
+        width:970px;
+    }
+}
+@media (min-width:1200px){
+    .box{
+        width:1170px;
+    }
+}
+
+.main li{
+    box-sizing: border-box;
+    padding:0 15px;
+    margin-bottom: 30px;
+    div{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 12px;
+        @include bg(#fff);
+        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 2px 0px;
+        img{
+            width: 100%;
+        }
+        p{
+            text-align: center;
+            line-height: 31px;
+            a{
+                font-size: 24px;
+                &:hover{
+                    color: $hover-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+/*欢迎*/
+.wel{
+    padding:40px 15px;
+    @include bg(#eee);
+    p{
+        text-align: center;
+        font-size: 14px;
+        line-height: 30px;
+        color: #333;
+        a{
+            color: #337ab7;
+            &:hover{
+                color:#23527c;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+/*脚部*/
+.footer-box{
+    @include bg(#202020);
+    .footer{
+        padding: 35px 15px 0 15px;
+        box-sizing: border-box;
+        margin: auto;
+        li{
+            box-sizing: border-box;
+            padding:0 30px;
+            margin-bottom: 35px;
+            position: relative;
+            div{
+                position: absolute;
+                top:31px;
+                left: 30px;
+                @include rect(90px,1px);
+                @include bg($blue);
+            }
+            p{
+                color: $white;
+                border-bottom: 1px solid #303030;
+                font-size: 18px;
+                padding-bottom: 7px;
+                margin-bottom: 21px;
+            }
+            a{
+                float: left;
+                display: block;
+                font-size: 14px;
+                margin-bottom: 14px;
+                color: #959595;
+                &:hover{
+                    color: $white;
+                }
+            }
+            .footer-a{
+                padding: 2px 7px;
+                border: 1px solid #303030;
+                line-height: 24px;
+                border-radius: 1px;
+                margin-right: 10px;
+                &:hover{
+                    border-color: $blue;
+                    @include bg($blue);
+                }
+            }
+            .footer-all{
+                border-bottom: 1px dashed #303030;
+                padding-bottom: 14px;
+                width: 100%;
+            }
+        }
+    }
+}
+/*底部*/
+.end{
+    padding: 17px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 18px;
+    border-top:1px solid #303030;
+    @include bg(#111);
+    color: #555;
+    font-size: 12px;
+    a{
+        color: #555;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

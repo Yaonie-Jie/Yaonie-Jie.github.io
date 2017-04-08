@@ -1,0 +1,67 @@
+//栅格系统
+////////////////////////
+
+/*去掉标签的默认样式*/
+body,h1,h2,h3,h4,h5,h6,p,pre,ol,ul,li,form,input,textarea,dl,dt,dd,select,option{
+  margin:0;
+  padding:0;
+}
+ul,ol,li{
+  list-style:none;
+}
+a{
+  text-decoration:none;
+  color: #777;
+}
+body{
+  background:#f2f2f2;
+}
+*{
+  font-family:ff-tisa-web-pro-1, ff-tisa-web-pro-2, "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+input,select,img{
+  border:none;
+}
+input{
+  outline:none;
+}
+
+
+//bootstrap
+.row{
+    overflow: hidden;
+}
+%f{
+    float: left;
+    position: relative;
+}
+$cols:12 !default;
+$break-points:(
+    'xs':0,
+    'sm':768px,
+    'md':992px,
+    'lg':1200px
+);
+@each $name in map_keys($break-points){
+    @for $i from 1 through $cols{
+        .col-#{$name}-#{$i}{
+            @extend %f;
+        }
+    }
+    $size:map_get($break-points,$name);
+    @if($size==0){
+        @for $i from 1 through $cols{
+            .col-#{$name}-#{$i}{
+                width: percentage($i/$cols);
+            }
+        }
+    }@else{
+        @media (min-width:$size){
+            @for $i from 1 through $cols{
+                .col-#{$name}-#{$i}{
+                    width: percentage($i/$cols);
+                }
+            }
+        }
+    }
+}

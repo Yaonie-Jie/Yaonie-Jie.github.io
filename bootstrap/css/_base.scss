@@ -1,0 +1,65 @@
+
+//矩形
+@mixin rect($width:980px,$height:100px){
+    width:$width;
+    height:$height;
+}
+//正方形
+@mixin cube($size:100px){
+    width:$size;
+    height: $size;
+}
+//圆形
+@mixin circle($size:50px){
+    @include cube($size*2);
+    border-radius:50%;
+}
+//上下垂直居中
+%tb{
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin: auto;
+}
+//左右垂直居中
+%lr{
+    position:absolute;
+    left:0;
+    right:0;
+    margin: auto;
+}
+//上下左右垂直居中
+%center{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+}
+
+//背景颜色
+@mixin bg($color:#000){
+    background-color: $color;
+}
+
+
+
+//背景图片居中,且不重复
+%bgi{
+    background-repeat:no-repeat;
+    background-position: center center; 
+}
+//背景图片
+@mixin bgimg($url){
+    background-image: url($url);
+}
+
+
+
+///////////////////////////////////////
+$color:#39414a !default;
+$white:#fff !default;
+$hover-color:#000 !default;
+$blue:#337ab7 !default;
+///////////////////////////////////////
