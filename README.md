@@ -1,2 +1,8 @@
-# Yaonie-Jie.github.io
-这是我的个人网站
+
+```mermaid
+sequenceDiagram
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
